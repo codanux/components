@@ -1,0 +1,54 @@
+{
+    "name": "codanux/components",
+    "description": "Laravel Form Components",
+    "keywords": [
+        "codanux",
+        "components"
+    ],
+    "homepage": "https://github.com/codanux/components",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Omer",
+            "email": "codanux@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^v8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codanux\\Components\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codanux\\Components\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codanux\\Components\\ComponentsServiceProvider"
+            ],
+            "aliases": {
+                "Components": "Codanux\\Components\\ComponentsFacade"
+            }
+        }
+    }
+}
