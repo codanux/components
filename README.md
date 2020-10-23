@@ -19,7 +19,7 @@ composer require codanux/components
 
 ``` php
 
-<x-input label="Name" name="name" />
+<x-input label="Name" name="name" class="m-2" type="text" />
 
 <x-textarea label="Body" name="body" rows="4" />
 
@@ -36,7 +36,7 @@ composer require codanux/components
 
 Label or Error customize
 
-"{field}-{attribute}" match label attributes 
+"{field}-{attribute}" match field attributes attach 
 
 <x-$component label-id="label_1" label-class="mb-2"   />
 
