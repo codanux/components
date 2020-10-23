@@ -15,10 +15,32 @@ You can install the package via composer:
 composer require codanux/components
 ```
 
-## Usage
+## Components
 
 ``` php
-// Usage description here
+
+<x-input label="Name" name="name" />
+
+<x-textarea label="Body" name="body" rows="4" />
+
+<x-radio :options="[1 => 'First', 2 => 'Two']" label="Radio" name="radio"/>
+
+<x-select :options="[1 => 'First', 2 => 'Two']" label="Select" name="select"/>
+
+<x-checkboxes :options="[1 => 'First', 2 => 'Two']" label="Checkboxes" name="checkboxes[]"/>
+```
+
+## Component Attributes
+
+``` php
+
+Label or Error customize
+
+"{field}-{attribute}" match label attributes 
+
+<x-$component label-id="label_1" label-class="mb-2"   />
+
+<x-$component error-id="error_1" error-class-class="mt-2"   />
 ```
 
 ### Testing
