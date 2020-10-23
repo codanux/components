@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel Form Components
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codanux/components.svg?style=flat-square)](https://packagist.org/packages/codanux/components)
 [![Build Status](https://img.shields.io/travis/codanux/components/master.svg?style=flat-square)](https://travis-ci.org/codanux/components)
@@ -14,6 +14,12 @@ You can install the package via composer:
 ```bash
 composer require codanux/components
 ```
+
+## Configuration Components
+``` php
+php artisan vendor:publish --provider="Codanux\Components\ComponentsServiceProvider"
+```
+
 
 ## Components
 
