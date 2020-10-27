@@ -15,7 +15,7 @@ You can install the package via composer:
 composer require codanux/components
 ```
 
-## Configuration Components
+## Configuration
 ``` php
 php artisan vendor:publish --provider="Codanux\Components\ComponentsServiceProvider"
 ```
@@ -44,9 +44,9 @@ Label or Error customize
 
 "{field}-{attribute}" match field attributes attach 
 
-<x-$component label-id="label_1" label-class="mb-2"   />
+<x-input label-id="label_1" label-class="mb-2" />
 
-<x-$component error-id="error_1" error-class-class="mt-2"   />
+<x-textarea label-class="mb-2" error-id="error_1" error-class-class="mt-2" />
 ```
 
 ### Testing
@@ -79,3 +79,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Laravel Package Boilerplate
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).# components
+# components
