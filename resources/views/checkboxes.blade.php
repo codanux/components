@@ -8,7 +8,7 @@
     @foreach($options as $key => $option)
         <div class="mr-4">
             <input type="checkbox"
-                {!! $attributes->merge(['id' => 'locale_'.$key , 'value' => $option, 'class' => 'form-checkbox '.($errors->has($attributes->key()) ? config('components.error.class') : '')]) !!}
+                {!! $attributes->merge(['id' => 'locale_'.$key , 'value' => $key, 'class' => 'form-checkbox '.($errors->has($attributes->key()) ? config('components.error.class') : '')]) !!}
             @if(old($attributes->key(), $attributes->get('value')) == $option){{ 'checked' }}@endif>
             <label class="font-medium text-sm text-gray-700" for="locale_{{ $key }}">{{ $option }}</label>
         </div>

@@ -18,7 +18,7 @@ class Components
 
     public static function errorRegex($name)
     {
-        return preg_replace("/\[(.*?)\]/", '.${1}', $name);
+        return preg_replace("/\[]/", '', preg_replace("/\[(\w+)\]/", '.${1}', $name));
     }
 
 

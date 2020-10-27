@@ -5,6 +5,8 @@
  */
 return [
 
+    'prefix' => '',
+
     'error' => [
         'field' => 'name',
         'class' => 'border border-red-500'

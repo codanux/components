@@ -51,12 +51,14 @@ class ComponentsServiceProvider extends ServiceProvider
 
     protected function configureComponents()
     {
-        $this->callAfterResolving(BladeCompiler::class, function ()  {
-            Blade::component('components::input', 'input');
-            Blade::component('components::textarea', 'textarea');
-            Blade::component('components::radio', 'radio');
-            Blade::component('components::checkboxes', 'checkboxes');
-            Blade::component('components::select', 'select');
+        $prefix = config('components.prefix');
+
+        $this->callAfterResolving(BladeCompiler::class, function () use ($prefix) {
+            Blade::component('components::input', 'input', $prefix);
+            Blade::component('components::textarea', 'textarea', $prefix);
+            Blade::component('components::radio', 'radio', $prefix);
+            Blade::component('components::checkboxes', 'checkboxes', $prefix);
+            Blade::component('components::select', 'select', $prefix);
         });
     }
 }
