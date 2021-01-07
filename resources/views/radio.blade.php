@@ -8,9 +8,9 @@
     @foreach($options as $key => $option)
         <div class="mr-4">
             <input type="radio"
-                   {!! $attributes->merge(['id' => 'locale_'.$key , 'value' => $key, 'class' => 'form-radio '.($errors->has($attributes->key()) ? config('components.field.error.class') : '')]) !!}
+                   {!! $attributes->merge(['id' => $attributes->get('name').'_'.$key , 'value' => $key, 'class' => 'form-radio '.($errors->has($attributes->key()) ? config('components.field.error.class') : '')]) !!}
             @if(old($attributes->key(), $attributes->get('value')) == $option){{ 'checked' }}@endif>
-            <label class="font-medium text-sm text-gray-700" for="locale_{{ $key }}">{{ $option }}</label>
+            <label class="font-medium text-sm text-gray-700" for="{{ $attributes->get('name').'_'.$key }}">{{ $option }}</label>
         </div>
     @endforeach
 </div>

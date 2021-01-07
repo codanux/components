@@ -46,7 +46,7 @@ Label or Error customize
 
 <x-input label-id="label_1" label-class="mb-2" />
 
-<x-textarea label-class="mb-2" error-id="error_1" error-class-class="mt-2" />
+<x-textarea label-class="mb-2" error-id="error_1" error-class="mt-2" />
 ```
 
 ### Testing
