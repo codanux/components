@@ -5,7 +5,7 @@
 </label>
 
 <div class="inline-block relative w-full">
-    <select {!! $attributes->merge(['class' => 'block appearance-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none '.($errors->has($attributes->key()) ? config('components.error.class') : ''), 'id' => $attributes->get('name')]) !!}>
+    <select {!! $attributes->merge(['class' => 'block appearance-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none '.($errors->has($attributes->key()) ? config('components.field.error.class') : ''), 'id' => $attributes->get('name')]) !!}>
         <option></option>
         @foreach($options as $key => $option)
             <option value="{!! $key !!}">{!! $option !!}</option>
@@ -16,6 +16,7 @@
     </div>
 </div>
 
+
 @error($attributes->key())
-    <p {{ $attributes->tag('error')->merge(['class' => 'text-sm text-red-600 mt-2']) }}>{{ $message }}</p>
+    <p {{ $attributes->tag('error')->merge(config('components.error')) }}>{{ $message }}</p>
 @enderror

@@ -9,7 +9,7 @@ class Components
         $filters = $attributes->whereStartsWith($tag.$type);
         foreach ($filters as $key => $value)
         {
-            $filters[substr($key,strlen($tag) +1)] = $value;
+            $filters[substr($key,strlen($tag) + strlen($type))] = $value;
             unset($filters[$key]);
         }
 

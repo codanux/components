@@ -7,9 +7,16 @@ return [
 
     'prefix' => '',
 
+    'key' => 'name',
+
+    'field' => [
+        'error' => [
+            'class' => 'border border-red-500'
+        ]
+    ],
+
     'error' => [
-        'field' => 'name',
         'class' => 'border border-red-500'
-    ]
+    ],
 
 ];

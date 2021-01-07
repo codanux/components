@@ -16,7 +16,7 @@ class ComponentMacros
     public function key()
     {
         return function () {
-            return Components::errorRegex($this[config('components.error.field')]);
+            return Components::errorRegex($this[config('components.key')]);
         };
     }
 
