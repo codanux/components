@@ -46,4 +46,17 @@ return [
         ],
     ],
 
+    'checkboxes' => [
+        'class' => 'form-checkbox',
+        'class_error' => 'border border-red-500',
+
+        'label' => [
+            'class' => 'block font-medium text-sm text-gray-700',
+        ],
+
+        'error' => [
+            'class' => 'mt-2 text-sm text-red-600'
+        ],
+    ],
+
 ];

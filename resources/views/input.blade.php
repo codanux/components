@@ -1,11 +1,9 @@
 @props(['disabled' => false])
 @php
-$config = config('components.input');
-
-if ($errors->has($attributes->key())) {
-    $config['class'] = $config['class'].' '.$config['class_error'];
-}
-
+    $config = config('components.input');
+    if ($errors->has($attributes->key())) {
+        $config['class'] = $config['class'].' '.$config['class_error'];
+    }
 @endphp
 
 <label {!! $attributes->tag('label')->merge(array_merge($config['label'], ['for' => $attributes->get('name')])) !!}>
