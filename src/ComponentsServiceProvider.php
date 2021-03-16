@@ -4,9 +4,11 @@ namespace Codanux\Components;
 
 use Codanux\Components\Macros\ComponentMacros;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\ComponentAttributeBag;
+use function Couchbase\defaultDecoder;
 
 class ComponentsServiceProvider extends ServiceProvider
 {
@@ -53,12 +55,17 @@ class ComponentsServiceProvider extends ServiceProvider
     {
         $prefix = config('components.prefix');
 
-        $this->callAfterResolving(BladeCompiler::class, function () use ($prefix) {
-            Blade::component('components::input', 'input', $prefix);
-            Blade::component('components::textarea', 'textarea', $prefix);
-            Blade::component('components::radio', 'radio', $prefix);
-            Blade::component('components::checkboxes', 'checkboxes', $prefix);
-            Blade::component('components::select', 'select', $prefix);
+        $files = File::files(__DIR__.'/../resources/views');
+
+        $this->callAfterResolving(BladeCompiler::class, function () use ($prefix, $files) {
+
+            foreach ($files as $file) {
+                $name = $file->getFilenameWithoutExtension();
+                $names = str_split($name, strpos($name, '.'));
+                $alias = $names[0];
+
+                Blade::component('components::'.$alias, $alias, $prefix);
+            }
         });
     }
 }

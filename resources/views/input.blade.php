@@ -1,13 +1,21 @@
 @props(['disabled' => false])
+@php
+$config = config('components.input');
 
-<label {!! $attributes->tag('label')->merge(['class' => 'block font-medium text-sm text-gray-700', 'for' => $attributes->get('name')]) !!}>
+if ($errors->has($attributes->key())) {
+    $config['class'] = $config['class'].' '.$config['class_error'];
+}
+
+@endphp
+
+<label {!! $attributes->tag('label')->merge(array_merge($config['label'], ['for' => $attributes->get('name')])) !!}>
     {{ $attributes->get('label') }}
 </label>
 
-<input value="{{ old($attributes->key(), $attributes->get('value')) }}" {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'mt-1 block w-full form-input rounded-md shadow-sm '.($errors->has($attributes->key()) ? config('components.field.error.class') : ''), 'id' => $attributes->get('name')]) !!}>
+<input value="{{ old($attributes->key(), $attributes->get('value')) }}" {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => $config['class'], 'id' => $attributes->get('name')]) !!}>
 
 
 @error($attributes->key())
-    <p {{ $attributes->tag('error')->merge(config('components.error')) }}>{{ $message }}</p>
+    <p {{ $attributes->tag('error')->merge($config['error']) }}>{{ $message }}</p>
 @enderror
 
