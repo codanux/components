@@ -12,7 +12,7 @@ if ($errors->has($attributes->key())) {
     {{ $attributes->get('label') }}
 </label>
 
-<input value="{{ old($attributes->key(), $attributes->get('value')) }}" {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => $config['class'], 'id' => $attributes->get('name')]) !!}>
+<input value="{{ old($attributes->key(), $attributes->get('value')) }}" {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => $config['class'], 'type'=> 'text', 'id' => $attributes->get('name')]) !!}>
 
 
 @error($attributes->key())

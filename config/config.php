@@ -31,6 +31,19 @@ return [
         'error' => [
             'class' => 'mt-2 text-sm text-red-600'
         ],
-    ]
+    ],
+
+    'select' => [
+        'class' => 'block appearance-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none',
+        'class_error' => 'border border-red-500',
+
+        'label' => [
+            'class' => 'block font-medium text-sm text-gray-700',
+        ],
+
+        'error' => [
+            'class' => 'mt-2 text-sm text-red-600'
+        ],
+    ],
 
 ];
